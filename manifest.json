@@ -1,0 +1,21 @@
+{
+	"manifest_version": 2,
+
+	"name": "Instagram Combiner",
+	"description": "Combines Instagram photos by removing margins between them",
+	"version": "1.0",
+	"browser_action": {
+		"default_icon": "icon.png"
+	},
+	"content_scripts": [
+		{
+			"matches": ["*://*.instagram.com/*"],
+			"css": ["app/inject.css"],
+			"js": ["app/listen.js"]
+		}
+	],
+	"background": {
+		"scripts": ["app/background.js"],
+		"persistent": false
+	}
+}
